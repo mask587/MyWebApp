@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+
+<h2>Contact Form</h2>
+
+<form method="post">
+    <label>Name:</label><br />
+    <input type="text" asp-for="Name" /><br /><br />
+
+    <label>Email:</label><br />
+    <input type="email" asp-for="Email" /><br /><br />
+
+    <label>Message:</label><br />
+    <textarea asp-for="Message"></textarea><br /><br />
+
+    <button type="submit">Submit</button>
+</form>
+
+@if (Model.Submitted)
+{
+    <h3>Submitted Data:</h3>
+    <p><b>Name:</b> @Model.Name</p>
+    <p><b>Email:</b> @Model.Email</p>
+    <p><b>Message:</b> @Model.Message</p>
+}
